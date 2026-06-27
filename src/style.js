@@ -28,6 +28,7 @@ const style = css`
 }
 .scheduled-status {
   padding-left: 5px;
+  font-size: var(--nationalrail-card-status-font-size, 1em);
 }
 .platform-container {
   display:flex;
