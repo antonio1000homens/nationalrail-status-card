@@ -109,6 +109,7 @@ class NationalrailStatusCard extends LitElement {
       ["font_size", "--nationalrail-card-font-size"],
       ["heading_font_size", "--nationalrail-card-heading-font-size"],
       ["train_font_size", "--nationalrail-card-train-font-size"],
+      ["status_font_size", "--nationalrail-card-status-font-size"],
       ["details_font_size", "--nationalrail-card-details-font-size"]
     ];
     return mappings
