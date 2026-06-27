@@ -33,6 +33,7 @@ export default class NationalrailStatusCardEditor extends EditorForm {
       { controls: [{ label: "Base font size", configValue: "font_size", type: FormControlType.Textbox }] },
       { controls: [{ label: "Heading font size", configValue: "heading_font_size", type: FormControlType.Textbox }] },
       { controls: [{ label: "Train font size", configValue: "train_font_size", type: FormControlType.Textbox }] },
+      { controls: [{ label: "Status font size", configValue: "status_font_size", type: FormControlType.Textbox }] },
       { controls: [{ label: "Details font size", configValue: "details_font_size", type: FormControlType.Textbox }] },
     ])
   };
