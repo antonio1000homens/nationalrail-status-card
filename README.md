@@ -76,6 +76,7 @@ Else, if you prefer the graphical editor, use the menu to add the resource:
 | font_size ***(optional)*** | string or number |  |  | Base font size for the card. Plain numbers are treated as pixels.
 | heading_font_size ***(optional)*** | string or number |  |  | Font size for the station heading. Plain numbers are treated as pixels.
 | train_font_size ***(optional)*** | string or number |  |  | Font size for each train row. Plain numbers are treated as pixels.
+| status_font_size ***(optional)*** | string or number |  |  | Font size for train status text. Plain numbers are treated as pixels.
 | details_font_size ***(optional)*** | string or number |  |  | Font size for the calling-at details. Plain numbers are treated as pixels.
 
 ```yaml
@@ -85,6 +86,7 @@ limit: 3
 font_size: 24px
 heading_font_size: 30px
 train_font_size: 24px
+status_font_size: 22px
 details_font_size: 20px
 ```
 
