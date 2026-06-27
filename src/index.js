@@ -53,7 +53,7 @@ class NationalrailStatusCard extends LitElement {
     if (this._config?.limit) {
       let limit = 0;
       if (typeof this._config.limit === 'number') {
-        limit = config.limit;
+        limit = this._config.limit;
       }
       else if (typeof this._config.limit === "string") {
         limit = parseInt(this._config.limit);
@@ -68,10 +68,11 @@ class NationalrailStatusCard extends LitElement {
     if (trains && trains.length > 0) {
       items = trains.map(this.renderTrain);
     }
+    const styleVariables = this.getStyleVariables();
     return html`<ha-card>
       <div id="content">
-      <div id="nationalrail-status">
-      <h2>${this.attributes?.station}</h3>
+      <div id="nationalrail-status" style=${styleVariables}>
+      <h2>${this.attributes?.station}</h2>
       ${items}
       </div>
       </div>
@@ -101,6 +102,35 @@ class NationalrailStatusCard extends LitElement {
       <h4>Calling at ${train.destinations.map(dest => destinationPresent(dest, train.expected)).join(", ")}</h4 >
     </div >
       `
+  }
+
+  getStyleVariables() {
+    const mappings = [
+      ["font_size", "--nationalrail-card-font-size"],
+      ["heading_font_size", "--nationalrail-card-heading-font-size"],
+      ["train_font_size", "--nationalrail-card-train-font-size"],
+      ["details_font_size", "--nationalrail-card-details-font-size"]
+    ];
+    return mappings
+      .map(([configKey, cssVariable]) => {
+        const value = this.normalizeSize(this._config?.[configKey]);
+        return value ? `${cssVariable}: ${value};` : "";
+      })
+      .join("");
+  }
+
+  normalizeSize(value) {
+    if (value === undefined || value === null || value === "") {
+      return "";
+    }
+    if (typeof value === "number") {
+      return `${value}px`;
+    }
+    const trimmed = value.trim();
+    if (/^\d+(\.\d+)?$/.test(trimmed)) {
+      return `${trimmed}px`;
+    }
+    return trimmed;
   }
 
 }
