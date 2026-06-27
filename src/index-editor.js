@@ -30,6 +30,10 @@ export default class NationalrailStatusCardEditor extends EditorForm {
     return this.renderForm([
       { controls: [{ label: "Entity", configValue: "entity", type: FormControlType.Dropdown, items: filterTrainEntities(this._hass, getEntitiesByDomain(this._hass, "sensor")) }] },
       { controls: [{ label: "Number of trains to shown", configValue: "limit", type: FormControlType.Textbox }] },
+      { controls: [{ label: "Base font size", configValue: "font_size", type: FormControlType.Textbox }] },
+      { controls: [{ label: "Heading font size", configValue: "heading_font_size", type: FormControlType.Textbox }] },
+      { controls: [{ label: "Train font size", configValue: "train_font_size", type: FormControlType.Textbox }] },
+      { controls: [{ label: "Details font size", configValue: "details_font_size", type: FormControlType.Textbox }] },
     ])
   };
 }
