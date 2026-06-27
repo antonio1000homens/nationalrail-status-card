@@ -5,6 +5,7 @@ import { css } from 'lit';
 const style = css`
 #nationalrail-status {
   padding:16px;
+  font-size: var(--nationalrail-card-font-size, var(--ha-font-size-m, 14px));
 }
 .train {
   display:flex;
@@ -13,6 +14,7 @@ const style = css`
   border:1px white solid;
   border-radius: 5px;
   margin: 2px 0px;
+  font-size: var(--nationalrail-card-train-font-size, 1em);
 }
 .top-heading {
   display:flex;
@@ -39,7 +41,14 @@ const style = css`
 h3, h4 {
   margin:0;
 }
+h2 {
+  font-size: var(--nationalrail-card-heading-font-size, 1.5em);
+}
+h3 {
+  font-size: var(--nationalrail-card-train-heading-font-size, 1.15em);
+}
 h4 {
+  font-size: var(--nationalrail-card-details-font-size, .95em);
   font-style: italic;
   font-weight: 500;
 }
